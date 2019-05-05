@@ -1,0 +1,19 @@
+<div class="col-sm-7">
+  <ul class="list-group">
+    <li class="list-group-item listalign " *ngFor="let x of inputList; let i= index">
+      <label class="container">
+        <input type="checkbox" [(ngModel)]="x.checked" checked="checked">
+        <span class="checkmark"></span>
+        <label #labelName [ngStyle]="{'text-decoration':getStyle(x.checked)}"
+          style="word-break: break-all; max-width:170px;">{{x.name}}</label>
+        <span class="btnnalign"><button type="button" class="btn btn-info btnalign" (click)="onEdit(i)">Edit</button>
+          <button type="button" class="btn btn-danger btnalgn" (click)="onDelete(i)">Delete</button>
+        </span>
+      </label>
+    </li>
+  </ul>
+  <div>
+    <button type="button" class="btn btn-default" style="margin-left: 515px;" (click)="clearCompleted() "
+      *ngIf="inputList.length!=0">Clear Completed</button>
+  </div>
+</div>

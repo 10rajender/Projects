@@ -1,0 +1,16 @@
+<section class ="todoapp">
+  <header class="header">
+
+      <h1>todos</h1>
+
+          <input class="new-todo txtalgn" placeholder="What needs to be done?" name ="newtodo" [(ngModel)]="newtodo"  #newtodo1 autofocus="">
+
+          <button type="button" class="btn btn-primary btnalgn" *ngIf="!atUpdate" (click)="onAdd(newtodo1.value)" >Add
+
+          </button>
+          <button type="button" class="btn btn-success btnalgn" *ngIf="atUpdate" (click)="onAdd(newtodo1.value)">Update</button>
+        <app-todolist [inputList] = input (newtodoValue)="onUpdate($event)"></app-todolist>
+
+  </header>
+
+  </section>
